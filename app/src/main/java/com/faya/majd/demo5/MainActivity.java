@@ -14,10 +14,10 @@ import android.widget.TextView;
 import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
-    public static int [] IMAGES = { R.drawable.samievent1, R.drawable.legoclass , R.drawable.karateclass , R.drawable.hapoelbash , R.drawable.hackathon};
-    public static String [] NAMES = { "Purim Donations SCE" , "Lego Robotics", "Karate class", "Br7 vs Haifa" , "Community hackathon "};
-    public static String [] CATEGORY = { "Donations", "Kids classes", "Adult classes" , "Sport Event" , "Community"};
-    public static String [] DATE = { "1-20/3/2019" , "25/3/2019", "25/3/2019" ,"25/3/2019" ,"25/3/2019"};
+    public static int [] IMAGES = { R.drawable.hourwithkid,R.drawable.fooddonations,R.drawable.lightrun,R.drawable.moonparty,R.drawable.samievent1, R.drawable.legoclass , R.drawable.karateclass , R.drawable.hapoelbash , R.drawable.hackathon};
+    public static String [] NAMES = { "Good Hour with kid","Food Donations","Light Run","Party for Birashit","purim donations SCE" , "Lego Robotics", "Karate class", "Br7 vs Haifa" , "Community hackathon "};
+    public static String [] CATEGORY = { "Donations/Free","Donations/Free","Free/Sport","Free/Famiily","Donations", "Kids classes", "Adult classes" , "Sport Event" , "Community"};
+    public static String [] DATE = { "11/4/2019","11/4/2019","21/5/2019","11/4/2019","1-20/3/2019" , "25/3/2019", "25/3/2019" ,"25/3/2019" ,"25/3/2019"};
 
 
     @Override
