@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    >
+
+
+
+
+
+
+
+    <item android:id="@+id/L1" android:title="שורה 1"></item>
+
+    <item android:id="@+id/L2" android:title="שורה 2"></item>
+
+    <item android:id="@+id/L3" android:title="שורה 3"></item>
+
+    <item android:id="@+id/L4" android:title="שורה 4"></item>
+</menu>
