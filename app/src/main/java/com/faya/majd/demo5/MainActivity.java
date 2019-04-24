@@ -1,21 +1,30 @@
 package com.faya.majd.demo5;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.zip.Inflater;
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
+    //TAG for debuging (Kiril)
+    private static final String TAG = "MainActivity";
+
+    //var arrays
+    private ArrayList<String> mNames = new ArrayList<>();
+    private ArrayList<String> mImageUrls = new ArrayList<>();
+
+    //old
     public static int [] IMAGES = { R.drawable.hourwithkid,R.drawable.fooddonations,R.drawable.lightrun,R.drawable.moonparty,R.drawable.samievent1, R.drawable.legoclass , R.drawable.karateclass , R.drawable.hapoelbash , R.drawable.hackathon};
     public static String [] NAMES = { "Good Hour with kid","Food Donations","Light Run","Party for Birashit","purim donations SCE" , "Lego Robotics", "Karate class", "Br7 vs Haifa" , "Community hackathon "};
     public static String [] CATEGORY = { "Donations/Free","Donations/Free","Free/Sport","Free/Famiily","Donations", "Kids classes", "Adult classes" , "Sport Event" , "Community"};
@@ -30,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.Toolbar_Mahayom);
         setSupportActionBar(toolbar);
 
-        final ListView listView = findViewById(R.id.listView);
+       /* final ListView listView = findViewById(R.id.listView);
 
         CustomAdapter customAdapter = new CustomAdapter();
         listView.setAdapter(customAdapter);
@@ -43,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+         */
+
+        getImages();
+
     }
 
     @Override
@@ -82,5 +95,55 @@ public class MainActivity extends AppCompatActivity {
 
             return convertView;
         }
+    }
+
+
+
+    //Trying recycle view
+
+    private void getImages(){
+        Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
+
+        mImageUrls.add("https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
+        mNames.add("Good Hour with kid 1");
+
+        mImageUrls.add("https://i.redd.it/tpsnoz5bzo501.jpg");
+        mNames.add("Good Hour with kid 2");
+
+        mImageUrls.add("https://i.redd.it/qn7f9oqu7o501.jpg");
+        mNames.add("Good Hour with kid 3");
+
+        mImageUrls.add("https://i.redd.it/j6myfqglup501.jpg");
+        mNames.add("Good Hour with kid 4");;
+
+
+        mImageUrls.add("https://i.redd.it/0h2gm1ix6p501.jpg");
+        mNames.add("Good Hour with kid 5");
+
+        mImageUrls.add("https://i.redd.it/k98uzl68eh501.jpg");
+        mNames.add("Good Hour with kid 6");
+
+
+        mImageUrls.add("https://i.redd.it/glin0nwndo501.jpg");
+        mNames.add("Good Hour with kid 7");
+
+        mImageUrls.add("https://i.redd.it/obx4zydshg601.jpg");
+        mNames.add("Good Hour with kid 8");
+
+        mImageUrls.add("https://i.imgur.com/ZcLLrkY.jpg");
+        mNames.add("Good Hour with kid 9");
+
+        initRecyclerView();
+
+    }
+
+    private void initRecyclerView(){
+        Log.d(TAG, "initRecyclerView: init recyclerview");
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(layoutManager);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mNames, mImageUrls);
+        recyclerView.setAdapter(adapter);
     }
 }
