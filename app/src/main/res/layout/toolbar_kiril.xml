@@ -15,6 +15,7 @@
 
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
+        android:contentDescription="@null"
         android:src="@drawable/cooltext322084064127360" />
 
 

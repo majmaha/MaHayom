@@ -15,7 +15,7 @@
         tools:ignore="InvalidId" />
 
     <LinearLayout
-
+        android:id="@+id/Cat_view2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Toolbar_Mahayom"
@@ -54,7 +54,7 @@
     </LinearLayout>
 
 
-    <!--<ListView
+    <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="441dp"
@@ -68,6 +68,6 @@
         android:focusable="true">
 
     </ListView>
--->
+
 
 </RelativeLayout>
